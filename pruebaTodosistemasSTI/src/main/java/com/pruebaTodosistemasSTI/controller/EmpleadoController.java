@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/empleados")
+@RequestMapping("/api/empleados")
 public class EmpleadoController {
     
     @Autowired
@@ -33,8 +33,8 @@ public class EmpleadoController {
         return empleadoservice.actualizar(emp);
     }
     
-    @DeleteMapping
-    public void eliminar(@RequestBody Empleado emp){
-        empleadoservice.eliminar(emp);
+    @DeleteMapping("{codigo}")
+    public void eliminar(@PathVariable Integer codigo){
+        empleadoservice.eliminar(codigo);
     }
 }

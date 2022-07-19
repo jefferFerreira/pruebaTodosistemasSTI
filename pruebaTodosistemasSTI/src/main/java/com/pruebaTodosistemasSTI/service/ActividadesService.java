@@ -28,8 +28,8 @@ public class ActividadesService {
         return actividadesrepo.findAll();
     }
     
-    public void eliminar(Actividades act) {
-        actividadesrepo.delete(act);
+    public void eliminar(Integer codigo) {
+        actividadesrepo.deleteById(codigo);
     }
     
 }

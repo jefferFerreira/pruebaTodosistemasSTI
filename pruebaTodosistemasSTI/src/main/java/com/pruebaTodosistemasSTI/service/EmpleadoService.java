@@ -27,8 +27,8 @@ public class EmpleadoService {
         return empleadorepo.findAll();
     }
     
-    public void eliminar(Empleado emp) {
-        empleadorepo.delete(emp);
+    public void eliminar(Integer codigo) {
+        empleadorepo.deleteById(codigo);
     }
     
 }

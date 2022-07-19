@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/actividades")
+@RequestMapping("/api/actividades")
 public class ActividadesController {
     
     @Autowired
@@ -34,9 +34,9 @@ public class ActividadesController {
         return actividadesservice.actualizar(act);
     }
     
-    @DeleteMapping
-    public void eliminar(@RequestBody Actividades act){
-        actividadesservice.eliminar(act);
+    @DeleteMapping("{codigo}")
+    public void eliminar(@PathVariable Integer codigo){
+        actividadesservice.eliminar(codigo);
     }
     
 }
