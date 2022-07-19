@@ -12,6 +12,10 @@ public class ActividadesService {
     @Autowired
     private ActividadesRepo actividadesrepo;
     
+    public Actividades obtener(Integer codigo){
+        return actividadesrepo.getById(codigo);
+    }
+    
     public Actividades insertar(Actividades act) {
         return actividadesrepo.save(act);
     }

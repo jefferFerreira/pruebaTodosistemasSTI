@@ -18,6 +18,12 @@ public class ActividadesController {
     public List<Actividades> listar(){
         return actividadesservice.listar();
     }
+     
+    @GetMapping("{codigo}")
+    public Actividades obtener(@PathVariable Integer codigo){
+        return actividadesservice.obtener(codigo);
+    }
+    
     @PostMapping
     public Actividades insertar(@RequestBody Actividades act){
         return actividadesservice.insertar(act);

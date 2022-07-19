@@ -12,6 +12,9 @@ public class EmpleadoService {
     @Autowired
     private EmpleadoRepo empleadorepo;
     
+    public Empleado obtener(Integer codigo){
+        return empleadorepo.getById(codigo);
+    }
     public Empleado insertar(Empleado emp) {
         return empleadorepo.save(emp);
     }

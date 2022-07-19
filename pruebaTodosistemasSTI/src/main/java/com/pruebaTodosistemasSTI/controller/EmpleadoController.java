@@ -18,6 +18,11 @@ public class EmpleadoController {
         return empleadoservice.listar();
     }
     
+    @GetMapping("{codigo}")
+    public Empleado obtener(@PathVariable Integer codigo){
+        return empleadoservice.obtener(codigo);
+    }
+    
     @PostMapping
     public Empleado insertar(@RequestBody Empleado emp){
         return empleadoservice.insertar(emp);
